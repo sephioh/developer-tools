@@ -10,3 +10,6 @@ curl -s -o ~/.vimrc https://raw.githubusercontent.com/sephioh/developer-tools/ma
 
 # install plugins
 vim -c VundleInstall -c quital
+
+# show successful message
+echo "developer-tools installed with success!"
