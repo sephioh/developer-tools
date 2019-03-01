@@ -1,7 +1,12 @@
 #!/bin/bash
+# create reqyured dirs
+mkdir -p ~/.vim/bundle
+mkdir -p ~/.vim/pack/default/start
+
 # install vundle for vim
-if [ -d "$DIRECTORY" ]; then
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+  git clone --quiet https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  git clone --quiet https://github.com/morhetz/gruvbox.git ~/.vim/pack/default/start/gruvbox
 fi
 
 # download required files
