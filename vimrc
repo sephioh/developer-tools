@@ -54,7 +54,11 @@ filetype plugin indent on
 colo gruvbox
 
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
-au BufNewFile,BufRead *.js, *.html, *.css set tabstop=2 softtabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.js set tabstop=2 softtabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.ts set tabstop=2 softtabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.html set tabstop=2 softtabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.css set tabstop=2 softtabstop=2 shiftwidth=2
+au BufNewFile,BufRead * set tabstop=2 softtabstop=2 shiftwidth=2
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw, match BadWhitespace /\s\+$/
 
