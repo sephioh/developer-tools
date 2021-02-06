@@ -1,7 +1,6 @@
 """"""""" PLUGIN INSTALLATION """"""""""""
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'benmills/vimux'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -19,12 +18,22 @@ Plugin 'ludovicchabant/vim-gutentags.git'
 Plugin 'leafgarland/typescript-vim.git'
 call vundle#end()
 
-
 """"""""" General configuration """"""""""""
 colo solarized8
 nnoremap ; :
 let mapleader="," " change the mapleader from \ to ,
 set timeoutlen=1000 ttimeoutlen=200 "dont wait for normal mode
+
+if has("gui_running")
+    " C-Space seems to work under gVim on both Linux and win32
+    inoremap <C-Space> <C-n>
+else " no gui
+  if has("unix")
+    inoremap <Nul> <C-n>
+  else
+  " I have no idea of the name of Ctrl-Space elsewhere
+  endif
+endif
 
 syntax on  "enable syntax
 set number  "display line numbers
@@ -62,6 +71,7 @@ au BufNewFile,BufRead * set tabstop=4 softtabstop=4 shiftwidth=4
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.js set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.ts set tabstop=2 softtabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.tsx set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.html set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.css set tabstop=2 softtabstop=2 shiftwidth=2
 highlight BadWhitespace ctermbg=red guibg=darkred
@@ -96,7 +106,7 @@ let g:NERDTreeIgnore=['\~$', '__pycache__']
 let g:autotagTagsFile=".tags"
 let g:NERDTreeWinPos = "right"
 nnoremap <leader>. :CtrlPTag<cr>
-map <C-n> :NERDTreeToggle<CR>
+map <C-y> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 ""CTRLP config
@@ -106,6 +116,12 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 
 ""GitGutter
 if exists('&signcolumn')  " Vim 7.4.2201
