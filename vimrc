@@ -14,10 +14,14 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/indentpython.vim'
+Plugin 'lifepillar/vim-solarized8'
+Plugin 'ludovicchabant/vim-gutentags.git'
+Plugin 'leafgarland/typescript-vim.git'
 call vundle#end()
 
 
 """"""""" General configuration """"""""""""
+colo solarized8
 nnoremap ; :
 let mapleader="," " change the mapleader from \ to ,
 set timeoutlen=1000 ttimeoutlen=200 "dont wait for normal mode
@@ -53,7 +57,6 @@ set noswapfile
 
 filetype off
 filetype plugin indent on
-colo gruvbox
 
 au BufNewFile,BufRead * set tabstop=4 softtabstop=4 shiftwidth=4
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
