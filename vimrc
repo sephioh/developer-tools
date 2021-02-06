@@ -45,6 +45,9 @@ set incsearch
 set ignorecase
 set smartcase
 
+" <Ctrl-x> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-x> :nohl<CR><C-x>
+
 set nobackup
 set noswapfile
 
