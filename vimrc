@@ -17,10 +17,12 @@ Plugin 'lifepillar/vim-solarized8'
 Plugin 'ludovicchabant/vim-gutentags.git'
 Plugin 'leafgarland/typescript-vim.git'
 Plugin 'chr4/nginx.vim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 call vundle#end()
 
 """"""""" General configuration """"""""""""
 colo solarized8
+highlight Pmenu ctermbg=gray guibg=gray
 nnoremap ; :
 let mapleader="," " change the mapleader from \ to ,
 set timeoutlen=1000 ttimeoutlen=200 "dont wait for normal mode
@@ -138,4 +140,7 @@ map <Leader>vp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
 map <Leader>vl :VimuxRunLastCommand<CR>
 
-set t_ut=
+" coc
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
