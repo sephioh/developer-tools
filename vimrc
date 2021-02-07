@@ -16,6 +16,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'ludovicchabant/vim-gutentags.git'
 Plugin 'leafgarland/typescript-vim.git'
+Plugin 'chr4/nginx.vim'
 call vundle#end()
 
 """"""""" General configuration """"""""""""
