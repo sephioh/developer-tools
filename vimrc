@@ -17,6 +17,7 @@ Plugin 'lifepillar/vim-solarized8'
 Plugin 'ludovicchabant/vim-gutentags.git'
 Plugin 'leafgarland/typescript-vim.git'
 Plugin 'chr4/nginx.vim'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 call vundle#end()
 
