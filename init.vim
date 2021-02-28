@@ -146,7 +146,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-autocmd FileType python let b:coc_enabled=0 "disable coc for python files
 autocmd FileType python CocDisable
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
