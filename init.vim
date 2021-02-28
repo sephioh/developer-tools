@@ -129,23 +129,12 @@ map <Leader>vp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
 map <Leader>vl :VimuxRunLastCommand<CR>
 
-
-""YCM
-let g:ycm_autoclose_preview_window_after_completion=1
-" map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-map <leader>b :YcmCompleter GoToReferences<CR>
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_filetype_whitelist = {'python': 1}
-set completeopt-=preview
-
-
 " coc extensions
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
 autocmd FileType python CocDisable
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -158,5 +147,15 @@ let g:closetag_regions =  {
 \ 'typescript.tsx': 'jsxRegion,tsxRegion',
 \ 'javascript.jsx': 'jsxRegion',
 \ }
+
+
+""YCM
+let g:ycm_autoclose_preview_window_after_completion=1
+autocmd FileType python nmap <silent>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+autocmd FileType python nmap <silent>gr :YcmCompleter GoToReferences<CR>
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_filetype_whitelist = {'python': 1}
+set completeopt-=preview
+
 
 set t_vb=
