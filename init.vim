@@ -25,7 +25,7 @@ Plug 'ianks/vim-tsx'
 Plug 'dikiaap/minimalist'
 " Plug 'chr4/nginx.vim'
 Plug 'ycm-core/YouCompleteMe'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 

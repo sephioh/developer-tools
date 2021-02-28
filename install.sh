@@ -4,6 +4,7 @@ create_required_folders() {
 }
 
 download_config_files() {
+	create_required_folders
 	curl -s -o ~/.tmux.conf https://raw.githubusercontent.com/sephioh/developer-tools/master/tmux.conf
 	curl -s -o ~/.config/nvim/init.vim https://raw.githubusercontent.com/sephioh/developer-tools/master/init.vim
 }
@@ -18,6 +19,7 @@ mac_install() {
 
 install_deps() {
 	os="$(uname -s)"
+
 	if [ $os == "Linux" ]
 	then 
 		linux_install
