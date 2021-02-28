@@ -6,28 +6,27 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
-Plug 'vim-scripts/indentpython.vim'
 Plug 'morhetz/gruvbox'
 Plug 'myusuf3/numbers.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'preservim/nerdcommenter'
-" Plug 'vim-syntastic/syntastic'
-" Plug 'nvie/vim-flake8'
 " Plug 'mileszs/ack.vim'
 " Plug 'tpope/vim-fugitive'
-Plug 'vim-scripts/indentpython.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'dikiaap/minimalist'
 " Plug 'chr4/nginx.vim'
-Plug 'ycm-core/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'
+" Python plugins
+Plug 'ycm-core/YouCompleteMe'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'vim-scripts/indentpython.vim'
+Plug 'psf/black', { 'branch': 'stable' }
 call plug#end()
 
 """"""""" General configuration """"""""""""
