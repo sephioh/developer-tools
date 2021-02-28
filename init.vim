@@ -27,6 +27,7 @@ Plug 'dikiaap/minimalist'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 """"""""" General configuration """"""""""""
