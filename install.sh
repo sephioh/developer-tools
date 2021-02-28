@@ -35,13 +35,14 @@ installYCM() {
 }
 
 main(){
-	# install deps
 	install_deps
+
+	download_config_files
 
 	# install plugins
 	vim +PlugInstall +qall
 
-	# custom install for ycm
+	# custom install required for ycm
 	installYCM
 
 	echo "developer-tools installed with success!"
