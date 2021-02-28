@@ -89,15 +89,15 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-
-"""""""""" PLUGIN CONFIGURATION """"""""""""
-""python mode
-"let g:pymode_python = 'python3'
-"
 """Folding config
 set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za 
+
+"""""""""" PLUGIN CONFIGURATION """"""""""""
+""python mode
+let g:pymode_options_max_line_length = 88
+let g:pymode_options_colorcolumn = 0
 
 """NERDTree config
 let g:NERDTreeNodeDelimiter = "\u00a0"
