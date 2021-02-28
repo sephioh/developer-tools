@@ -156,5 +156,8 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_filetype_whitelist = {'python': 1}
 set completeopt-=preview
 
+""Black
+autocmd FileType python nmap <Leader>gl :Black<CR>
+
 
 set t_vb=
