@@ -7,14 +7,15 @@ download_config_files() {
 	create_required_folders
 	curl -s -o ~/.tmux.conf https://raw.githubusercontent.com/sephioh/developer-tools/master/tmux.conf
 	curl -s -o ~/.config/nvim/init.vim https://raw.githubusercontent.com/sephioh/developer-tools/master/init.vim
+	curl -s -o ~/.gitignore_global https://raw.githubusercontent.com/sephioh/developer-tools/master/.gitignore_global
 }
 
 linux_install() {
- 	sudo apt install neovim tmux python3-dev build-essential cmake 
+	sudo apt install neovim tmux python3-dev build-essential cmake git
 }
 
 mac_install() {
-	brew install cmake python mono go nodejs tmux
+	brew install cmake python mono go nodejs tmux git
 }
 
 install_deps() {
@@ -30,11 +31,18 @@ install_deps() {
 	pip install neovim
 }
 
-installYCM() {
- 	python3 ~/.config/nvim/plugged/YouCompleteMe/install.py
+install_ycm() {
+	python3 ~/.config/nvim/plugged/YouCompleteMe/install.py
 }
 
-main(){
+git_config() {
+	git config --global user.name "Abraão Alcântara"
+	git config --global user.email "sephioh@gmail.com"
+	git config --global core.excludesfile ~/.gitignore_global
+}
+
+
+main() {
 	install_deps
 
 	download_config_files
@@ -43,14 +51,11 @@ main(){
 	vim +PlugInstall +qall
 
 	# custom install required for ycm
-	installYCM
+	install_ycm
+
+	git_config
 
 	echo "developer-tools installed with success!"
 }
-
-# # install custom vim packages
-# sudo pip3 install rope ropemode ropevim
-# wget -P ~/.vim/ https://raw.githubusercontent.com/python-rope/ropevim/master/ftplugin/python_ropevim.vim
-# echo "source ~/.vim/python_ropevim.vim" >> ~/.vimrc
 
 main
