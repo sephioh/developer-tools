@@ -124,10 +124,9 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 ""VIMUX
-" Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
-" Run last command executed by VimuxRunCommand
 map <Leader>vl :VimuxRunLastCommand<CR>
+map <Leader>vc :VimuxCloseRunner<CR>
 
 " coc extensions
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
