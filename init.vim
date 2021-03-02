@@ -22,6 +22,7 @@ Plug 'dikiaap/minimalist'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'ntpeters/vim-better-whitespace'
 " Python plugins
 Plug 'ycm-core/YouCompleteMe'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
@@ -92,7 +93,7 @@ noremap <Right> <Nop>
 """Folding config
 set foldmethod=indent
 set foldlevel=99
-nnoremap <space> za 
+nnoremap <space> za
 
 """""""""" PLUGIN CONFIGURATION """"""""""""
 ""python mode
@@ -159,5 +160,8 @@ set completeopt-=preview
 ""Black
 autocmd FileType python nmap <Leader>gl :Black<CR>
 
+""vim-better-whitespace
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
 
 set t_vb=

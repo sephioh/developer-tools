@@ -22,7 +22,7 @@ install_deps() {
 	os="$(uname -s)"
 
 	if [ $os == "Linux" ]
-	then 
+	then
 		linux_install
 	else
 		mac_install
