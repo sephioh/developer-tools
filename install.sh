@@ -1,4 +1,8 @@
 #!/bin/bash
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
 create_required_folders() {
 	mkdir -p ~/.config/nvim/
 }
@@ -55,7 +59,7 @@ main() {
 
 	git_config
 
-	echo "developer-tools installed with success!"
+	echo -e "{GREEN}developer-tools installed with success!{NC}"
 }
 
 main
