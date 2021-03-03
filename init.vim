@@ -10,7 +10,7 @@ Plug 'morhetz/gruvbox'
 Plug 'myusuf3/numbers.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'preservim/nerdcommenter'
-" Plug 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ludovicchabant/vim-gutentags'
@@ -38,7 +38,6 @@ let mapleader="," " change the mapleader from \ to ,
 
 syntax on  "enable syntax
 set number  "display line numbers
-"set laststatus=2
 set encoding=utf-8
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
@@ -48,7 +47,7 @@ set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
-"set visualbell           " don't beep
+set visualbell           " don't beep
 set noerrorbells         " don't beep
 
 """search using insensitive case
@@ -61,7 +60,6 @@ set smartcase
 set nobackup
 set noswapfile
 
-"filetype off
 filetype plugin indent on
 
 au BufNewFile,BufRead * set tabstop=4 softtabstop=4 shiftwidth=4
