@@ -18,7 +18,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'dikiaap/minimalist'
-" Plug 'chr4/nginx.vim'
+Plug 'chr4/nginx.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'
