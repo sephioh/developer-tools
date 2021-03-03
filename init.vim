@@ -168,4 +168,16 @@ let g:strip_whitespace_on_save=1
 
 ""ropevim
 source ~/.config/nvim/plugged/ropevim/ftplugin/python_ropevim.vim
+
+""vim-fugitive
+function! ToggleGStatus()
+    if buflisted(bufname('.git/index'))
+        bd .git/index
+    else
+        Gstatus
+    endif
+endfunction
+command ToggleGStatus :call ToggleGStatus()
+nmap <silent>£ :ToggleGStatus<CR>
+
 set t_vb=

@@ -59,7 +59,7 @@ main() {
 
 	git_config
 
-   echo -e "${GREEN}developer-tools installed with success!${NC}"
+	echo -e "${GREEN}developer-tools installed with success!${NC}"
 }
 
 main
