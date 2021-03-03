@@ -117,6 +117,9 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+""Ack
+nmap ƒ :Ack!
+
 "" Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
