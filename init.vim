@@ -108,6 +108,8 @@ let g:autotagTagsFile=".tags"
 let g:NERDTreeWinPos = "right"
 nnoremap <leader>. :CtrlPTag<cr>
 map <C-y> :NERDTreeToggle<CR>
+nmap <silent>¡ :NERDTreeToggle<CR>
+
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """CTRLP config
