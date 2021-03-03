@@ -9,7 +9,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'myusuf3/numbers.vim'
 Plug 'tmhedberg/SimpylFold'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'preservim/nerdcommenter'
 " Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
@@ -32,7 +31,7 @@ Plug 'psf/black', { 'branch': 'stable' }
 call plug#end()
 
 """"""""" General configuration """"""""""""
-colo solarized8
+colo gruvbox
 nnoremap ; :
 let mapleader="," " change the mapleader from \ to ,
 "set timeoutlen=1000 ttimeoutlen=200 "dont wait for normal mode
