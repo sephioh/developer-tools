@@ -119,6 +119,8 @@ endif
 
 ""Ack
 nmap ƒ :Ack!
+let g:ack_autoclose = 1
+let g:ackpreview=1
 
 "" Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
@@ -137,19 +139,16 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-autocmd FileType python CocDisable
-
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
 vmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>f <Plug>(coc-format-selected)
-
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+autocmd FileType python CocDisable
 
 "" closetag
 let g:closetag_regions =  {
 \ 'typescript.tsx': 'jsxRegion,tsxRegion',
 \ 'javascript.jsx': 'jsxRegion',
 \ }
-
 
 ""YCM
 let g:ycm_autoclose_preview_window_after_completion=1
