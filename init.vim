@@ -12,7 +12,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'preservim/nerdcommenter'
 " Plug 'mileszs/ack.vim'
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'leafgarland/typescript-vim'
