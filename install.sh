@@ -15,7 +15,7 @@ download_config_files() {
 }
 
 linux_install() {
-	sudo apt install neovim tmux python3-dev build-essential cmake git ack silversearcher-ag
+	sudo apt install neovim tmux python3-dev build-essential cmake git ack silversearcher-ag ranger
 }
 
 mac_install() {
