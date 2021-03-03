@@ -31,7 +31,7 @@ Plug 'psf/black', { 'branch': 'stable' }
 call plug#end()
 
 """"""""" General configuration """"""""""""
-colo gruvbox
+colorscheme gruvbox
 nnoremap ; :
 let mapleader="," " change the mapleader from \ to ,
 "set timeoutlen=1000 ttimeoutlen=200 "dont wait for normal mode
