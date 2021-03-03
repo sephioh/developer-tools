@@ -118,7 +118,7 @@ if executable('ag')
 endif
 
 ""Ack
-nmap ƒ :Ack!
+nmap ƒ :Ack ""<LEFT>
 let g:ack_autoclose = 1
 let g:ackpreview=1
 
