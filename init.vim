@@ -22,6 +22,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
 " Python plugins
 Plug 'ycm-core/YouCompleteMe'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
