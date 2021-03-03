@@ -26,6 +26,7 @@ Plug 'ntpeters/vim-better-whitespace'
 " Python plugins
 Plug 'ycm-core/YouCompleteMe'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'python-rope/ropevim'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'psf/black', { 'branch': 'stable' }
 call plug#end()
@@ -163,4 +164,6 @@ autocmd FileType python nmap <Leader>gl :Black<CR>
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
+""ropevim
+source ~/.config/nvim/plugged/ropevim/ftplugin/python_ropevim.vim
 set t_vb=

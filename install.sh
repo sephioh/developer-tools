@@ -28,7 +28,7 @@ install_deps() {
 		mac_install
 	fi
 
-	pip install neovim
+	pip3 install neovim black ropevim rope ropemode
 }
 
 install_ycm() {
