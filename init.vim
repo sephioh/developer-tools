@@ -2,7 +2,6 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin()
 Plug 'benmills/vimux'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
@@ -24,6 +23,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " Python plugins
 Plug 'ycm-core/YouCompleteMe'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
@@ -105,19 +106,17 @@ let g:NERDTreeNodeDelimiter = "\u00a0"
 let g:NERDTreeIgnore=['\~$', '__pycache__']
 let g:autotagTagsFile=".tags"
 let g:NERDTreeWinPos = "right"
-nnoremap <leader>. :CtrlPTag<cr>
 map <C-y> :NERDTreeToggle<CR>
-nmap <silent>¡ :NERDTreeToggle<CR>
+let g:NERDTreeHijackNetrw = 0
+let g:ranger_replace_netrw = 1
+nmap <silent>¡ :RangerCurrentFile<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-"""CTRLP config
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
-  let g:ackprg = 'ag --vimgrep'
-endif
+""FZF
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+nmap <C-p> :Files<CR>
 
 ""Ack
 nmap ƒ :Ack ""<LEFT>
