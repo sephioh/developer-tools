@@ -25,6 +25,7 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-sneak'
 " Python plugins
 Plug 'ycm-core/YouCompleteMe'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
@@ -54,7 +55,6 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 
 """search using insensitive case
-"set hlsearch
 set nohlsearch
 set incsearch
 set ignorecase
@@ -174,4 +174,6 @@ endfunction
 command ToggleGStatus :call ToggleGStatus()
 nmap <silent>£ :ToggleGStatus<CR>
 
+
+let g:sneak#s_next = 1
 set t_vb=
