@@ -101,7 +101,7 @@ nnoremap <space> za
 let g:pymode_options_max_line_length = 88
 let g:pymode_options_colorcolumn = 0
 
-"""NERDTree config
+""NERDTree config
 let g:NERDTreeNodeDelimiter = "\u00a0"
 let g:NERDTreeIgnore=['\~$', '__pycache__']
 let g:autotagTagsFile=".tags"
@@ -122,12 +122,6 @@ nmap <C-p> :Files<CR>
 nmap ƒ :Ack ""<LEFT>
 let g:ack_autoclose = 1
 let g:ackpreview=1
-
-"" Ignore some folders and files for CtrlP indexing
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
-  \ 'file': 'tags\|\.so$\|\.dat$|\.DS_Store$'
-  \ }
 
 ""VIMUX
 map <Leader>vp :VimuxPromptCommand<CR>
