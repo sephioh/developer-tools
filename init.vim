@@ -32,6 +32,7 @@ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'python-rope/ropevim'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'psf/black', { 'branch': 'stable' }
+Plug 'mvanderkamp/vim-pudb-and-jam'
 call plug#end()
 
 """"""""" General configuration """"""""""""
@@ -175,6 +176,14 @@ endfunction
 command ToggleGStatus :call ToggleGStatus()
 nmap <silent>£ :ToggleGStatus<CR>
 
+""vim-pudb-and-jam"
+let g:pudb_sign='>☠'
+nnoremap <leader>bc :<C-U>PudbClearAll<CR>
+nnoremap <leader>be :<C-U>PudbEdit<CR>
+nnoremap <leader>bl :<C-U>PudbList<CR>
+nnoremap <leader>bq :<C-U>PudbQfList<CR>
+nnoremap <leader>bp :<C-U>PudbToggle<CR>
+nnoremap <leader>bu :<C-U>PudbUpdate<CR>
 
 let g:sneak#s_next = 1
 set t_vb=
