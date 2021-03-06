@@ -15,11 +15,23 @@ download_config_files() {
 }
 
 linux_install() {
-	sudo apt install neovim tmux python3-dev build-essential cmake git ack silversearcher-ag ranger fzf bat
+	sudo apt install zsh neovim tmux python3-dev build-essential cmake git ack silversearcher-ag ranger fzf bat
 }
 
 mac_install() {
-	brew install cmake python mono go nodejs tmux git
+	brew install zsh cmake python mono go nodejs tmux git
+}
+
+pip_install_tools() {
+	pip3 install neovim black ropevim rope ropemode pudb
+}
+
+zsh_setup() {
+	# set zsh as default shell
+	chsh -s $(which zsh)
+
+	# pudb as default python debugger
+	grep -qxF 'export PYTHONBREAKPOINT="pudb.set_trace"' ~/.zshrc || echo 'include "export PYTHONBREAKPOINT="pudb.set_trace"' >> ~/.zshrc
 }
 
 install_deps() {
@@ -32,7 +44,8 @@ install_deps() {
 		mac_install
 	fi
 
-	pip3 install neovim black ropevim rope ropemode
+	pip_install_tools
+	zsh_setup
 }
 
 install_ycm() {
