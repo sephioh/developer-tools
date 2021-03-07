@@ -191,8 +191,8 @@ nnoremap <leader>bu :<C-U>PudbUpdate<CR>
 let g:sneak#s_next = 1
 
 ""vim-autoimport"
-"import missing things and organize import
 let g:vim_isort_map = ''
-nnoremap <silent>¢ :ImportSymbol <cr> :Isort <cr> :Black <cr> :w <cr> hh
+"run black, import missing things and organize import
+nnoremap <silent>¢ :Black <cr> :ImportSymbol <cr> :Isort <cr> :w <cr> hh
 
 set t_vb=
