@@ -2,7 +2,8 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin()
 Plug 'benmills/vimux'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
@@ -36,7 +37,6 @@ Plug 'mvanderkamp/vim-pudb-and-jam'
 Plug 'wookayin/vim-autoimport'
 Plug 'darrikonn/vim-isort'
 Plug 'dense-analysis/ale'
-Plug 'maximbaz/lightline-ale'
 call plug#end()
 
 """"""""" General configuration """"""""""""
@@ -198,32 +198,12 @@ let g:vim_isort_map = ''
 "run black, import missing things and organize import
 nnoremap <silent>¢ :Black <cr> :ImportSymbol <cr> :Isort <cr> :w <cr> hh
 
-
 ""ALE"
 let b:ale_linters = ['pyflakes']
-let b:ale_fixers = ['black', 'autoimport']
+let g:ale_fixers = ['autoimport', 'black']
 nnoremap <leader>n :ALENext<cr>
 
-""lightline
-let g:lightline = {}
-let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_infos': 'lightline#ale#infos',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \ }
-let g:lightline.component_type = {
-      \     'linter_checking': 'right',
-      \     'linter_infos': 'right',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \ }
-let g:lightline.active = {
-		\ 'left': [ [ 'mode', 'paste' ],
-		\           [ 'readonly', 'filename', 'modified' ] ],
-		\ 'right': [ [ 'lineinfo' ],
-		\            [ 'percent' ],
-		\            [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos' ],
-		\            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+""airline
+let g:airline_theme='tomorrow'
 
 set t_vb=
