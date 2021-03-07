@@ -188,7 +188,6 @@ nnoremap <leader>bu :<C-U>PudbUpdate<CR>
 ""vim-sneak"
 let g:sneak#s_next = 1
 
-
 ""vim-autoimport"
 "import missing things and organize import
 let g:vim_isort_map = ''
