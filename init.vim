@@ -200,9 +200,9 @@ nnoremap <silent>¢ :Black <cr> :ImportSymbol <cr> :Isort <cr> :w <cr> hh
 
 
 ""ALE"
-let b:ale_linters = ['pyflakes', 'flake8', 'pylint']
+let b:ale_linters = ['pyflakes']
 let b:ale_fixers = ['black', 'autoimport']
-nnoremap <silent>n :ALENext<cr>
+nnoremap <leader>n :ALENext<cr>
 
 ""lightline
 let g:lightline = {}
