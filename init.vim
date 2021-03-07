@@ -35,6 +35,8 @@ Plug 'psf/black', { 'branch': 'stable' }
 Plug 'mvanderkamp/vim-pudb-and-jam'
 Plug 'wookayin/vim-autoimport'
 Plug 'darrikonn/vim-isort'
+Plug 'dense-analysis/ale'
+Plug 'maximbaz/lightline-ale'
 call plug#end()
 
 """"""""" General configuration """"""""""""
@@ -104,6 +106,7 @@ nnoremap <space> za
 ""python mode
 let g:pymode_options_max_line_length = 88
 let g:pymode_options_colorcolumn = 0
+let g:pymode_lint = 0
 
 ""NERDTree config
 let g:NERDTreeNodeDelimiter = "\u00a0"
@@ -194,5 +197,31 @@ let g:sneak#s_next = 1
 let g:vim_isort_map = ''
 "run black, import missing things and organize import
 nnoremap <silent>¢ :Black <cr> :ImportSymbol <cr> :Isort <cr> :w <cr> hh
+
+
+""ALE"
+let b:ale_linters = ['pyflakes', 'flake8', 'pylint']
+let b:ale_fixers = ['black', 'autoimport']
+
+let g:lightline = {}
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_infos': 'lightline#ale#infos',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \ }
+let g:lightline.component_type = {
+      \     'linter_checking': 'right',
+      \     'linter_infos': 'right',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \ }
+let g:lightline.active = {
+		\ 'left': [ [ 'mode', 'paste' ],
+		\           [ 'readonly', 'filename', 'modified' ] ],
+		\ 'right': [ [ 'lineinfo' ],
+		\            [ 'percent' ],
+		\            [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos' ],
+		\            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
 
 set t_vb=
