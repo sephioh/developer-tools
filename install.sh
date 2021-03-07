@@ -23,7 +23,11 @@ mac_install() {
 }
 
 pip_install_tools() {
-	pip3 install neovim black ropevim rope ropemode pudb
+	pip3 install neovim black ropevim rope ropemode pudb isort
+}
+
+setup_custom_commands() {
+	# TODO: add command to setup default pipenv dev deps
 }
 
 zsh_setup() {
