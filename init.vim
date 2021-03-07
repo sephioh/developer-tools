@@ -33,6 +33,8 @@ Plug 'python-rope/ropevim'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'mvanderkamp/vim-pudb-and-jam'
+Plug 'wookayin/vim-autoimport'
+Plug 'darrikonn/vim-isort'
 call plug#end()
 
 """"""""" General configuration """"""""""""
@@ -191,6 +193,6 @@ let g:sneak#s_next = 1
 ""vim-autoimport"
 "import missing things and organize import
 let g:vim_isort_map = ''
-nnoremap <silent>¢ :ImportSymbol <cr> :Isort <cr> :w <cr>hh
+nnoremap <silent>¢ :ImportSymbol <cr> :Isort <cr> :Black <cr> :w <cr> hh
 
 set t_vb=
