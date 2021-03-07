@@ -123,7 +123,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 ""FZF
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
-nmap <C-p> :Files<CR>
+nmap <silent> <C-p> :Files<CR>
 
 ""Ack
 nmap ƒ :Ack ""<LEFT>
