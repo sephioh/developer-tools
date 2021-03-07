@@ -185,5 +185,13 @@ nnoremap <leader>bq :<C-U>PudbQfList<CR>
 nnoremap <leader>bp :<C-U>PudbToggle<CR>
 nnoremap <leader>bu :<C-U>PudbUpdate<CR>
 
+""vim-sneak"
 let g:sneak#s_next = 1
+
+
+""vim-autoimport"
+"import missing things and organize import
+let g:vim_isort_map = ''
+nnoremap <silent>¢ :ImportSymbol <cr> :Isort <cr> :w <cr>hh
+
 set t_vb=
