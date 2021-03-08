@@ -11,6 +11,7 @@ download_config_files() {
 	create_required_folders
 	curl -s -o ~/.tmux.conf https://raw.githubusercontent.com/sephioh/developer-tools/master/tmux.conf
 	curl -s -o ~/.config/nvim/init.vim https://raw.githubusercontent.com/sephioh/developer-tools/master/init.vim
+	curl -s -o ~/.config/ranger/rc.conf https://raw.githubusercontent.com/sephioh/developer-tools/master/.rc.conf
 	curl -s -o ~/.gitignore_global https://raw.githubusercontent.com/sephioh/developer-tools/master/.gitignore_global
 }
 
