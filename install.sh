@@ -29,10 +29,15 @@ pip_install_tools() {
 	pip3 install ${PYTHON_DEV_DEPS}
 }
 
-setup_custom_commands() {
-	LOCAL_PATH=${HOME}/.local/bin
-	mkdir -p ${LOCAL_PATH}
+add_custom_commands() {
+	# setup local path
+	LOCAL_PATH="$HOME/.local/bin"
 	SETUP_DEV_PIPENV_PATH=${LOCAL_PATH}/setup-dev-pipenv
+	mkdir -p ${LOCAL_PATH}
+	grep -qxF "export PATH=\"$LOCAL_PATH:\$PATH\"" ~/.zshrc || echo "export PATH=\"$LOCAL_PATH:\$PATH\"" >> ~/.zshrc
+	source ~/.zshrc
+
+	# custom commands
 	echo "pipenv install --dev ${PYTHON_DEV_DEPS}" > ${SETUP_DEV_PIPENV_PATH}
 	chmod a+x ${SETUP_DEV_PIPENV_PATH}
 }
@@ -56,8 +61,8 @@ install_deps() {
 	fi
 
 	pip_install_tools
-	setup_custom_commands
 	zsh_setup
+	add_custom_commands
 }
 
 install_ycm() {
