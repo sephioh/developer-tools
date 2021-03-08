@@ -206,13 +206,15 @@ let g:vim_isort_map = ''
 "run black, import missing things and organize import
 nnoremap <silent>¢ :Black <cr> :ImportSymbol <cr> :Isort <cr> :w <cr> hh
 
-""ALE"
+""ale"
 let b:ale_linters = ['pyflakes']
 let g:ale_fixers = ['autoimport', 'black']
 nnoremap <leader>n :ALENext<cr>
 
-""airline
+""vim-airline
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
 
+""vim-tbone"
+nnoremap <silent> <leader>vb :Twrite {bottom} <cr> :TmuxNavigateDown <cr>
 set t_vb=
