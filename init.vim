@@ -27,6 +27,7 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
+Plug 'ryanoasis/vim-devicons'
 " Python plugins
 Plug 'ycm-core/YouCompleteMe'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
