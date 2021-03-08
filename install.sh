@@ -18,7 +18,9 @@ download_config_files() {
 }
 
 linux_install() {
-	sudo apt install zsh neovim tmux python3-dev build-essential cmake git ack silversearcher-ag ranger fzf bat
+	PACKAGES="zsh neovim tmux python3-dev build-essential cmake git ack silversearcher-ag ranger fzf bat"
+	sudo apt update -qq
+	sudo apt install -qqy $PACKAGES
 }
 
 mac_install() {
@@ -26,7 +28,7 @@ mac_install() {
 }
 
 pip_install_tools() {
-	pip3 install ${PYTHON_DEV_DEPS}
+	pip install -q ${PYTHON_DEV_DEPS}
 }
 
 add_custom_commands() {
