@@ -204,7 +204,7 @@ let g:sneak#s_next = 1
 ""vim-autoimport"
 let g:vim_isort_map = ''
 "run black, import missing things and organize import
-nnoremap <silent>¢ :Black <cr> :ImportSymbol <cr> :Isort <cr> :w <cr> hh
+nnoremap <silent>¢ :Black <cr> :ImportSymbol <cr> :Isort <cr> :w <cr> hhh
 
 ""ale"
 let b:ale_linters = ['pyflakes']
