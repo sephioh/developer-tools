@@ -43,7 +43,11 @@ Plug 'dense-analysis/ale'
 call plug#end()
 
 """"""""" General configuration """"""""""""
-colorscheme gruvbox
+if strftime("%H") < 6
+  colorscheme minimalist
+else
+  colorscheme gruvbox
+endif
 nnoremap ; :
 let mapleader="," " change the mapleader from \ to ,
 "set timeoutlen=1000 ttimeoutlen=200 "dont wait for normal mode
