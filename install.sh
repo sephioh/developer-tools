@@ -23,7 +23,7 @@ mac_install() {
 }
 
 pip_install_tools() {
-	pip3 install neovim black ropevim rope ropemode pudb isort
+	pip3 install neovim black ropevim rope ropemode pudb isort bpython pyflakes
 }
 
 setup_custom_commands() {
