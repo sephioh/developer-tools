@@ -1,0 +1,4 @@
+- [ ] ! setup default ranger config file
+- [ ] ! command to setup pipenv --dev deps
+- [ ] toggle themes (gruvbox, minimalist, solarized8) via shortcut
+- [ ] [BUGFIX] airline displaying non-expected chars
