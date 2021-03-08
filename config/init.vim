@@ -2,6 +2,7 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin()
 Plug 'benmills/vimux'
+Plug 'tpope/vim-tbone'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
