@@ -2,6 +2,7 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
+PYTHON_DEV_DEPS="neovim black ropevim rope ropemode pudb isort bpython pyflakes"
 
 create_required_folders() {
 	mkdir -p ~/.config/nvim/
@@ -24,16 +25,20 @@ mac_install() {
 }
 
 pip_install_tools() {
-	pip3 install neovim black ropevim rope ropemode pudb isort bpython pyflakes
+	pip3 install ${PYTHON_DEV_DEPS}
 }
 
 setup_custom_commands() {
-	# TODO: add command to setup default pipenv dev deps
+	LOCAL_PATH=${HOME}/.local/bin
+	mkdir -p ${LOCAL_PATH}
+	SETUP_DEV_PIPENV_PATH=${LOCAL_PATH}/setup-dev-pipenv
+	echo "pipenv install --dev ${PYTHON_DEV_DEPS}" > ${SETUP_DEV_PIPENV_PATH}
+	chmod a+x ${SETUP_DEV_PIPENV_PATH}
 }
 
 zsh_setup() {
 	# set zsh as default shell
-	chsh -s $(which zsh)
+	echo ${SHELL} | grep zsh || chsh -s $(which zsh)
 
 	# pudb as default python debugger
 	grep -qxF 'export PYTHONBREAKPOINT="pudb.set_trace"' ~/.zshrc || echo 'include "export PYTHONBREAKPOINT="pudb.set_trace"' >> ~/.zshrc
@@ -50,6 +55,7 @@ install_deps() {
 	fi
 
 	pip_install_tools
+	setup_custom_commands
 	zsh_setup
 }
 
@@ -69,13 +75,13 @@ main() {
 
 	download_config_files
 
+	git_config
+
 	# install plugins
 	vim +PlugInstall +qall
 
 	# custom install required for ycm
 	install_ycm
-
-	git_config
 
 	echo -e "${GREEN}developer-tools installed with success!${NC}"
 }
