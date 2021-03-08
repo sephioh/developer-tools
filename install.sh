@@ -18,7 +18,7 @@ download_config_files() {
 }
 
 linux_install() {
-	PACKAGES="zsh neovim tmux python3-dev build-essential cmake git ack silversearcher-ag ranger fzf bat"
+	PACKAGES="zsh autojump neovim tmux python3-dev build-essential cmake git ack silversearcher-ag ranger fzf bat"
 	sudo apt update -qq
 	sudo apt install -qqy $PACKAGES
 }
