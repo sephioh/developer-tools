@@ -1,8 +1,6 @@
 """"""""" PLUGIN INSTALLATION """"""""""""
 set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin()
-Plug 'benmills/vimux'
-Plug 'tpope/vim-tbone'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
@@ -18,7 +16,6 @@ Plug 'ianks/vim-tsx'
 Plug 'chr4/nginx.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
@@ -27,6 +24,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ryanoasis/vim-devicons'
 Plug 'aserebryakov/vim-todo-lists'
+" Tmux
+Plug 'benmills/vimux'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-tbone'
 " Themes
 Plug 'dikiaap/minimalist'
 Plug 'morhetz/gruvbox'
