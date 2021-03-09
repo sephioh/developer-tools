@@ -24,6 +24,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ryanoasis/vim-devicons'
 Plug 'aserebryakov/vim-todo-lists'
+Plug 'tpope/vim-surround'
 " Tmux
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
