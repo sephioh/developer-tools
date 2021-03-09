@@ -143,6 +143,7 @@ let g:ackpreview=1
 map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
 map <Leader>vc :VimuxCloseRunner<CR>
+map <Leader>vz :VimuxZoomRunner<CR>
 
 " coc extensions
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
