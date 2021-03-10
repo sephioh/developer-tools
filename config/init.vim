@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'myusuf3/numbers.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'preservim/nerdcommenter'
+Plug 'preservim/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'ludovicchabant/vim-gutentags'
@@ -220,4 +221,8 @@ let g:airline_powerline_fonts = 1
 
 ""vim-tbone"
 nnoremap <silent> <leader>vb :Twrite {bottom} <cr> :TmuxNavigateDown <cr>
+
+""tagbar"
+nnoremap <silent> ∞ :Tagbar<cr>
+
 set t_vb=
