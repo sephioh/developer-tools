@@ -1,0 +1,4 @@
+--ignore-dir=.mypy_cache
+--ignore-dir=.venv
+--ignore-dir=venv
+--ignore-file=is:tags

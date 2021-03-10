@@ -16,6 +16,7 @@ download_config_files() {
 	curl -s -o ~/.config/ranger/rc.conf $CONFIG_REPO_BASE_ADDRESS/rc.conf
 	curl -s -o ~/.gitignore_global $CONFIG_REPO_BASE_ADDRESS/.gitignore_global
 	curl -s -o ~/.flake8 $CONFIG_REPO_BASE_ADDRESS/.flake8
+	curl -s -o ~/.ackrc $CONFIG_REPO_BASE_ADDRESS/.ackrc
 }
 
 linux_install() {
