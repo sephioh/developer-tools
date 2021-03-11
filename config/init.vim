@@ -43,7 +43,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'mvanderkamp/vim-pudb-and-jam'
 Plug 'wookayin/vim-autoimport'
-Plug 'darrikonn/vim-isort'
+Plug 'fisadev/vim-isort'
 Plug 'dense-analysis/ale'
 call plug#end()
 
