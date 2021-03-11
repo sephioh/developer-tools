@@ -96,6 +96,8 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw, match BadWhitespace /\s\+$/
 
 """""""""" SHORTCUTS """"""""""""
+nnoremap <silent>º :source ~/.config/nvim/init.vim <cr>
+
 ""split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -191,8 +193,7 @@ function! ToggleGStatus()
         Gstatus
     endif
 endfunction
-command ToggleGStatus :call ToggleGStatus()
-nmap <silent>£ :ToggleGStatus<CR>
+nmap <silent>£ :call ToggleGStatus()<CR>
 
 ""vim-pudb-and-jam"
 let g:pudb_sign='>☠'
