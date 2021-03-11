@@ -26,6 +26,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-test/vim-test'
 " Tmux
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
@@ -224,5 +225,12 @@ nnoremap <silent> <leader>vb :Twrite {bottom} <cr> :TmuxNavigateDown <cr>
 
 ""tagbar"
 nnoremap <silent> ∞ :Tagbar<cr>
+
+""vim-test"
+nmap <silent> tt :TestNearest<CR>
+nmap <silent> tf :TestFile<CR>
+nmap <silent> ts :TestSuite<CR>
+nmap <silent> tl :TestLast<CR>
+" let test#strategy = "vimux"
 
 set t_vb=
