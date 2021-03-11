@@ -6,6 +6,7 @@ Plug 'aserebryakov/vim-todo-lists'
 Plug 'chr4/nginx.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'ianks/vim-tsx'
+Plug 'idanarye/vim-merginal'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
