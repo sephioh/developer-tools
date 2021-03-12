@@ -97,7 +97,7 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw, match BadWhitespace /\s\+$/
 
 """""""""" SHORTCUTS """"""""""""
-nnoremap <silent>º :source ~/.config/nvim/init.vim <cr>
+nnoremap <silent><F10> :source ~/.config/nvim/init.vim <cr>
 
 ""split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -131,7 +131,7 @@ let g:NERDTreeWinPos = "right"
 map <C-y> :NERDTreeToggle<CR>
 let g:NERDTreeHijackNetrw = 0
 let g:ranger_replace_netrw = 1
-nmap <silent>¡ :RangerCurrentFile<CR>
+nmap <silent><F1> :RangerCurrentFile<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -194,7 +194,7 @@ function! ToggleGStatus()
         Gstatus
     endif
 endfunction
-nmap <silent>£ :call ToggleGStatus()<CR>
+nmap <silent><F3> :call ToggleGStatus()<CR>
 
 ""vim-pudb-and-jam"
 let g:pudb_sign='>☠'
@@ -211,7 +211,7 @@ let g:sneak#s_next = 1
 ""vim-autoimport"
 let g:vim_isort_map = ''
 "run black, import missing things and organize import
-autocmd FileType python nnoremap <silent>¢ :Black <cr> :Isort <cr> :ImportSymbol <cr> :w <cr> b
+autocmd FileType python nnoremap <silent><F4> :Black <cr> :Isort <cr> :ImportSymbol <cr> :w <cr> b
 
 ""ale"
 let b:ale_linters = ['pyflakes']
@@ -221,12 +221,16 @@ nnoremap <leader>n :ALENext<cr>
 ""vim-airline
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
+" remove the filetype section
+let g:airline_section_y=''
+" remove separators for empty sections
+let g:airline_skip_empty_sections = 1
 
 ""vim-tbone"
 nnoremap <silent> <leader>vb :Twrite {bottom} <cr> :TmuxNavigateDown <cr>
 
 ""tagbar"
-nnoremap <silent> ∞ :Tagbar<cr>
+nnoremap <silent><F2> :Tagbar<cr>
 
 ""vim-test"
 nmap <silent> tt :TestNearest<CR>
