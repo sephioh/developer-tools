@@ -1,6 +1,10 @@
 """"""""" PLUGIN INSTALLATION """"""""""""
 set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin()
+" airline must be on top
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+""""""""""""""
 Plug 'airblade/vim-gitgutter'
 Plug 'aserebryakov/vim-todo-lists'
 Plug 'chr4/nginx.vim'
@@ -26,8 +30,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-test/vim-test'
 " Tmux
 Plug 'benmills/vimux'
