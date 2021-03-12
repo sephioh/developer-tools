@@ -1,2 +1,3 @@
 - [ ] ! pudb breakpoint not workinkg
+- [ ] ! add setup for autojump
 - [ ] [BUGFIX] airline displaying non-expected chars
