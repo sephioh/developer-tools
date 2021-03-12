@@ -75,6 +75,8 @@ set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 
+autocmd TermOpen * setlocal nonumber norelativenumber
+
 """search using insensitive case
 set nohlsearch
 set incsearch
