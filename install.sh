@@ -39,6 +39,7 @@ add_custom_commands() {
 	SETUP_DEV_PIPENV_PATH=${LOCAL_PATH}/setup-dev-pipenv
 	mkdir -p ${LOCAL_PATH}
 	grep -qxF "export PATH=\"$LOCAL_PATH:\$PATH\"" ~/.zshrc || echo "export PATH=\"$LOCAL_PATH:\$PATH\"" >> ~/.zshrc
+	grep -qxF "export FZF_DEFAULT_COMMAND='ag -l --path-to-ignore ~/.ignore --nocolor -g \"\"'" ~/.zshrc || echo "export FZF_DEFAULT_COMMAND='ag -l --path-to-ignore ~/.ignore --nocolor -g \"\"'" >> ~/.zshrc
 	source ~/.zshrc
 
 	# custom commands
