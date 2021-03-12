@@ -232,7 +232,8 @@ let g:airline_section_c = '%t'
 nnoremap <silent> <leader>vb :Twrite {bottom} <cr> :TmuxNavigateDown <cr>
 
 ""tagbar"
-nnoremap <silent><F2> :Tagbar<cr>
+nnoremap <silent><F2> :TagbarToggle<cr>
+let g:tagbar_autofocus = 1
 
 ""vim-test"
 nmap <silent> tt :TestNearest<CR>
