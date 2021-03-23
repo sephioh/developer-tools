@@ -3,6 +3,7 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 PYTHON_DEV_DEPS="neovim black ropevim rope ropemode pudb isort bpython pyflakes"
+RUST_DEV_DEPS="rust-src"
 
 create_required_folders() {
 	mkdir -p ~/.config/nvim/
@@ -17,6 +18,7 @@ download_config_files() {
 	curl -s -o ~/.gitignore_global $CONFIG_REPO_BASE_ADDRESS/.gitignore_global
 	curl -s -o ~/.flake8 $CONFIG_REPO_BASE_ADDRESS/.flake8
 	curl -s -o ~/.ackrc $CONFIG_REPO_BASE_ADDRESS/.ackrc
+	rustup component add rust-src
 }
 
 linux_install() {

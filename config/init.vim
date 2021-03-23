@@ -31,6 +31,8 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-test/vim-test'
+Plug 'tenfyzhong/tagbar-rust.vim'
+Plug 'cespare/vim-toml'
 " Tmux
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
