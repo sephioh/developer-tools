@@ -42,7 +42,7 @@ add_custom_commands() {
 	mkdir -p ${LOCAL_PATH}
 	grep -qxF "export PATH=\"$LOCAL_PATH:\$PATH\"" ~/.zshrc || echo "export PATH=\"$LOCAL_PATH:\$PATH\"" >> ~/.zshrc
 	grep -qxF "export FZF_DEFAULT_COMMAND='ag -l --path-to-ignore ~/.ignore --nocolor -g \"\"'" ~/.zshrc || echo "export FZF_DEFAULT_COMMAND='ag -l --path-to-ignore ~/.ignore --nocolor -g \"\"'" >> ~/.zshrc
-	source ~/.zshrc
+	zsh && source ~/.zshrc
 
 	# custom commands
 	echo "pipenv install --dev ${PYTHON_DEV_DEPS}" > ${SETUP_DEV_PIPENV_PATH}
