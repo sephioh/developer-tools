@@ -85,18 +85,22 @@ git_config() {
 
 main() {
 	install_deps
-
 	download_config_files
 
-	git_config
+	echo "Setup git configuration?"
+	select yn in "Yes" "No"; do
+		case $yn in
+			Yes ) git_config; break;;
+			No ) break;;
+		esac
+	done
 
 	# install plugins
 	vim +PlugInstall +qall
-
 	# custom install required for ycm
 	install_ycm
-
+	# success message
 	echo -e "${GREEN}developer-tools installed with success!${NC}"
 }
 
-main
+add_custom_commands
