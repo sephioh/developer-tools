@@ -104,6 +104,16 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw, match BadWhitespace /\s\+$/
 
 """""""""" SHORTCUTS """"""""""""
+"F1 -> File Browser
+nmap <silent><F1> :RangerCurrentFile<CR>
+"F2 -> Tag Bar
+nnoremap <silent><F2> :TagbarToggle<cr>
+"F3 -> Git Utils
+nmap <silent><F3> :call ToggleGStatus()<CR>
+"F4 -> Fix File
+autocmd FileType python nnoremap <silent><F4> :Black <cr> :Isort <cr> :ImportSymbol <cr> :w <cr> b
+autocmd FileType rust,typescript,typescript.tsx nnoremap <silent><F4> :call CocAction('format') <cr>
+"F10 -> Reload Neovim
 nnoremap <silent><F10> :source ~/.config/nvim/init.vim <cr>
 
 ""split navigations
@@ -138,7 +148,6 @@ let g:NERDTreeWinPos = "right"
 map <C-y> :NERDTreeToggle<CR>
 let g:NERDTreeHijackNetrw = 0
 let g:ranger_replace_netrw = 1
-nmap <silent><F1> :RangerCurrentFile<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -201,7 +210,6 @@ function! ToggleGStatus()
         Gstatus
     endif
 endfunction
-nmap <silent><F3> :call ToggleGStatus()<CR>
 
 ""vim-pudb-and-jam"
 let g:pudb_sign='>☠'
@@ -217,8 +225,6 @@ let g:sneak#s_next = 1
 
 ""vim-autoimport"
 let g:vim_isort_map = ''
-"run black, import missing things and organize import
-autocmd FileType python nnoremap <silent><F4> :Black <cr> :Isort <cr> :ImportSymbol <cr> :w <cr> b
 
 ""ale"
 let b:ale_linters = ['pyflakes']
@@ -239,7 +245,6 @@ let g:airline_section_c = '%t'
 nnoremap <silent> <leader>vb :Twrite {bottom} <cr> :TmuxNavigateDown <cr>
 
 ""tagbar"
-nnoremap <silent><F2> :TagbarToggle<cr>
 let g:tagbar_autofocus = 1
 
 ""vim-test"
