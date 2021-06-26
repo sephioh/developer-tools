@@ -152,7 +152,10 @@ let g:ranger_replace_netrw = 1
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-""FZF
+"GutenTags
+let g:gutentags_ctags_tagfile = ".tags"
+
+"""FZF
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 nmap <silent> <C-p> :Files<CR>
