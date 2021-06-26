@@ -1,3 +1,4 @@
 - [ ] ! pudb breakpoint not workinkg
 - [ ] ! add setup for autojump
+- [ ] ! add global gitignore setup
 - [ ] [BUGFIX] airline displaying non-expected chars
