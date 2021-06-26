@@ -238,7 +238,8 @@ let g:vim_isort_map = ''
 
 ""ale"
 let b:ale_linters = ['pyflakes']
-let g:ale_fixers = ['autoimport', 'black']
+let g:ale_linters = {'python': ['flake8']}
+let g:ale_fixers = {'python': ['autoimport', 'black']}
 nnoremap <leader>n :ALENext<cr>
 
 ""vim-airline
