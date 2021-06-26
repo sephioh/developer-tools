@@ -152,7 +152,7 @@ let g:NERDTreeNodeDelimiter = "\u00a0"
 let g:NERDTreeIgnore=['\~$', '__pycache__']
 let g:autotagTagsFile=".tags"
 let g:NERDTreeWinPos = "right"
-map <C-y> :NERDTreeToggle<CR>
+map <C-y> :NERDTreeToggle %<CR>
 let g:NERDTreeHijackNetrw = 0
 let g:ranger_replace_netrw = 1
 
