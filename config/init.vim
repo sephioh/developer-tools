@@ -120,6 +120,9 @@ nnoremap <silent><F5> :TagbarToggle<cr>
 "F10 -> Reload Neovim
 nnoremap <silent><F10> :source ~/.config/nvim/init.vim <cr>
 
+"CTRL + F
+nnoremap <C-f> :Ag<CR>
+
 ""split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
