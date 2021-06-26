@@ -2,7 +2,7 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
-PYTHON_DEV_DEPS="neovim black ropevim rope ropemode pudb isort bpython pyflakes"
+PYTHON_DEV_DEPS="neovim black ropevim rope ropemode pudb isort bpython pyflakes pylint automport"
 RUST_DEV_DEPS="rust-src"
 
 create_required_folders() {
