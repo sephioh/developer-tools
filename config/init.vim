@@ -246,12 +246,21 @@ nnoremap <leader>n :ALENext<cr>
 ""vim-airline
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
-" remove the filetype section
-let g:airline_section_y=''
+" remove the filetype part
+let g:airline_section_x=''
+" remove the encoding type section
+let g:airline_section_y = ''
 " remove separators for empty sections
 let g:airline_skip_empty_sections = 1
+
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_section_c = '%t'
+
+au User AirlineAfterInit :let g:airline_section_x = airline#section#create([])
+au User AirlineAfterInit :let g:airline_section_z = airline#section#create(["linenr", "maxlinenr"])
+
+let g:webdevicons_enable_airline_statusline_fileformat_symbols = 0
+
 
 ""vim-tbone"
 nnoremap <silent> <leader>vb :Twrite {bottom} <cr> :TmuxNavigateDown <cr>
