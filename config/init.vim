@@ -97,7 +97,7 @@ au BufNewFile,BufRead,BufAdd *.py let b:coc_enabled=0
 au BufNewFile,BufRead *.js set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.ts set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.tsx set tabstop=2 softtabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.ts setlocal filetype=typescript.tsx
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 au BufNewFile,BufRead *.html set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.css set tabstop=2 softtabstop=2 shiftwidth=2
@@ -115,11 +115,11 @@ nnoremap <silent><F2> :ALENext <cr>
 nmap <silent><F3> :call ToggleGStatus()<CR>
 "F4 -> Fix File
 autocmd FileType python nnoremap <silent><F4> :Black <cr> :ImportSymbol <cr> :ALEFix <cr> :Isort <cr> :w <cr> b
-autocmd FileType rust,typescript,typescript.tsx nnoremap <silent><F4> :call CocAction('format') <cr>
+autocmd FileType rust,typescript.tsx nnoremap <silent><F4> :call CocAction('format') <cr>
 "F5 -> Tag Bar
 nnoremap <silent><F5> :TagbarToggle<cr>
 "F10 -> Reload Neovim
-nnoremap <silent><F10> :source ~/.config/nvim/init.vim <cr>
+nnoremap <silent><F9> :source $MYVIMRC <cr>
 
 "CTRL + F
 nnoremap <C-f> :Ag<CR>
