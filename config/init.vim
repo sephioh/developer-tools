@@ -34,6 +34,7 @@ Plug 'vim-test/vim-test'
 Plug 'tenfyzhong/tagbar-rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'dkarter/bullets.vim'
 " Tmux
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
