@@ -112,12 +112,12 @@ nmap <silent><F1> :RangerCurrentFile<CR>
 "F2 -> Next issue
 nnoremap <silent><F2> <cr>
 autocmd FileType python nnoremap <silent><F2> :ALENext <cr>
-autocmd FileType typescript nnoremap <silent><F2> :call CocAction('diagnosticNext') <cr>
+autocmd FileType rust,typescript,typescript.tsx nnoremap <silent><F2> :call CocAction('diagnosticNext') <cr>
 "F3 -> Git Utils
 nmap <silent><F3> :call ToggleGStatus()<CR>
 "F4 -> Fix File
 autocmd FileType python nnoremap <silent><F4> :Black <cr> :ImportSymbol <cr> :ALEFix <cr> :Isort <cr> :w <cr> b
-autocmd FileType rust,typescript nnoremap <silent><F4> :call CocAction('format') <cr> :CocFix <cr> b
+autocmd FileType rust,typescript,typescript.tsx nnoremap <silent><F4> :call CocAction('format') <cr> :CocFix <cr> b
 "F5 -> Tag Bar
 nnoremap <silent><F5> :TagbarToggle<cr>
 "F10 -> Reload Neovim
