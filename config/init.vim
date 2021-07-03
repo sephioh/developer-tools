@@ -98,11 +98,10 @@ au BufNewFile,BufRead,BufAdd *.py let b:coc_enabled=0
 au BufNewFile,BufRead *.js set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.ts set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.tsx set tabstop=2 softtabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.ts setlocal filetype=typescript.tsx
-au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 au BufNewFile,BufRead *.html set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.css set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.json set tabstop=2 softtabstop=2 shiftwidth=2
+au BufRead,BufNewFile tsconfig.json set filetype=jsonc
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw, match BadWhitespace /\s\+$/
@@ -111,12 +110,14 @@ au BufRead,BufNewFile *.py,*.pyw, match BadWhitespace /\s\+$/
 "F1 -> File Browser
 nmap <silent><F1> :RangerCurrentFile<CR>
 "F2 -> Next issue
-nnoremap <silent><F2> :ALENext <cr>
+nnoremap <silent><F2> <cr>
+autocmd FileType python nnoremap <silent><F2> :ALENext <cr>
+autocmd FileType typescript nnoremap <silent><F2> :call CocAction('diagnosticNext') <cr>
 "F3 -> Git Utils
 nmap <silent><F3> :call ToggleGStatus()<CR>
 "F4 -> Fix File
 autocmd FileType python nnoremap <silent><F4> :Black <cr> :ImportSymbol <cr> :ALEFix <cr> :Isort <cr> :w <cr> b
-autocmd FileType rust,typescript.tsx nnoremap <silent><F4> :call CocAction('format') <cr>
+autocmd FileType rust,typescript nnoremap <silent><F4> :call CocAction('format') <cr> :CocFix <cr> b
 "F5 -> Tag Bar
 nnoremap <silent><F5> :TagbarToggle<cr>
 "F10 -> Reload Neovim
@@ -185,8 +186,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-vmap <leader>f <Plug>(coc-format-selected)
-nmap <leader>f <Plug>(coc-format-selected)
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 autocmd FileType python CocDisable
 
