@@ -1,48 +1,68 @@
 """"""""" PLUGIN INSTALLATION """"""""""""
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call plug#begin()
-" airline must be on top
+" Airline (must be on top)
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-""""""""""""""
-Plug 'airblade/vim-gitgutter'
-Plug 'aserebryakov/vim-todo-lists'
-Plug 'chr4/nginx.vim'
-Plug 'francoiscabrol/ranger.vim'
-Plug 'ianks/vim-tsx'
-Plug 'idanarye/vim-merginal'
-Plug 'jiangmiao/auto-pairs'
+Plug 'ryanoasis/vim-devicons'
+
+" Find things!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/gv.vim'
 Plug 'justinmk/vim-sneak'
-Plug 'leafgarland/typescript-vim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
-Plug 'myusuf3/numbers.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'rbgrouleff/bclose.vim'
+
+" File browser
+Plug 'francoiscabrol/ranger.vim'
+Plug 'scrooloose/nerdtree'
+
+" Text editor helpers
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'preservim/nerdcommenter'
-Plug 'preservim/tagbar'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/SimpylFold'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'vim-test/vim-test'
-Plug 'tenfyzhong/tagbar-rust.vim'
-Plug 'cespare/vim-toml'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+Plug 'myusuf3/numbers.vim'
+
+" Syntax helpers
 Plug 'dkarter/bullets.vim'
+Plug 'chr4/nginx.vim'
+Plug 'aserebryakov/vim-todo-lists'
+
+" Tagbar
+Plug 'preservim/tagbar'
+Plug 'tenfyzhong/tagbar-rust.vim'
+
+" lsp
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
+
 " Tmux
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-tbone'
+
 " Themes
 Plug 'dikiaap/minimalist'
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-solarized8'
+Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim'
+
 " Python plugins
 Plug 'ycm-core/YouCompleteMe'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
@@ -52,24 +72,45 @@ Plug 'psf/black', { 'branch': 'stable' }
 Plug 'mvanderkamp/vim-pudb-and-jam'
 Plug 'wookayin/vim-autoimport'
 Plug 'fisadev/vim-isort'
-Plug 'dense-analysis/ale'
+
+" JS & TS
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'ianks/vim-tsx'
+
+" Test
+Plug 'vim-test/vim-test'
+
 call plug#end()
 
-""""""""" General configuration """"""""""""
-if strftime("%H") < 6
-  colorscheme minimalist
-else
-  colorscheme gruvbox
-endif
-nnoremap ; :
-let mapleader="," " change the mapleader from \ to ,
-"set timeoutlen=1000 ttimeoutlen=200 "dont wait for normal mode
+""" Lua config
+lua << EOF
+EOF
 
-syntax on  "enable syntax
-set number  "display line numbers
+autocmd User TelescopePreviewerLoaded setlocal wrap
+
+""""""""" General configuration """"""""""""
+"colorscheme minimalist
 set encoding=utf-8
-set autoindent    " always set autoindenting on
-set copyindent    " copy the previous indentation on autoindenting
+colorscheme gruvbox
+nnoremap ; :
+
+set cursorline
+
+"change the mapleader from \ to ,
+let mapleader=","
+
+"enable syntax
+syntax on
+
+"display line numbers
+set number
+
+" indentation
+set autoindent
+set copyindent
+filetype plugin indent on
+
 set smarttab
 set updatetime=100
 set history=1000         " remember more commands and search history
@@ -90,59 +131,76 @@ set smartcase
 set nobackup
 set noswapfile
 
-filetype plugin indent on
-
 au BufNewFile,BufRead * set tabstop=4 softtabstop=4 shiftwidth=4
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead,BufAdd *.py let b:coc_enabled=0
 au BufNewFile,BufRead *.js set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.ts set tabstop=2 softtabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.tsx set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.html set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.css set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.json set tabstop=2 softtabstop=2 shiftwidth=2
 au BufRead,BufNewFile tsconfig.json set filetype=jsonc
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType typescript.tsx setlocal ts=2 sts=2 sw=2
+autocmd FileType typescriptreact setlocal ts=2 sts=2 sw=2
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw, match BadWhitespace /\s\+$/
 
 """""""""" SHORTCUTS """"""""""""
 "F1 -> File Browser
 nmap <silent><F1> :RangerCurrentFile<CR>
+
 "F2 -> Next issue
 nnoremap <silent><F2> <cr>
 autocmd FileType python nnoremap <silent><F2> :ALENext <cr>
 autocmd FileType rust,typescript,typescript.tsx nnoremap <silent><F2> :call CocAction('diagnosticNext') <cr>
+
 "F3 -> Git Utils
 nmap <silent><F3> :call ToggleGStatus()<CR>
+
 "F4 -> Fix File
 autocmd FileType python nnoremap <silent><F4> :Black <cr> :ImportSymbol <cr> :ALEFix <cr> :Isort <cr> :w <cr> b
 autocmd FileType rust,typescript,typescript.tsx nnoremap <silent><F4> :call CocAction('format') <cr> :CocFix <cr> b
+
 "F5 -> Tag Bar
 nnoremap <silent><F5> :TagbarToggle<cr>
-"F10 -> Reload Neovim
-nnoremap <silent><F9> :source $MYVIMRC <cr>
 
-"CTRL + F
+"F10 -> Reload Neovim
+nnoremap <silent><F10> :source $MYVIMRC <cr>
+
+"CTRL + F -> Search pattern in dir
 nnoremap <C-f> :Ag<CR>
 
-""split navigations
+"CTRL + P -> Search file by filename
+nmap <silent> <C-p> :Files<CR>
+
+"CTRL + A -> Search commands
+nmap <silent> <C-a> :Commands<CR>
+
+"Space bar -> Fold/Unfold code
+nnoremap <space> za
+
+"CTRL + y -> NERDTree
+map <C-y> :NERDTreeToggle<CR>
+
+"split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <silent>q :bd<CR>
 
-""Disable arrow keys
+"Disable arrow keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-"""Folding config
+"""""""""" /SHORTCUTS """"""""""""
+"Folding config
 set foldmethod=indent
 set foldlevel=99
-nnoremap <space> za
 
 """""""""" PLUGIN CONFIGURATION """"""""""""
 ""python mode
@@ -155,10 +213,8 @@ let g:NERDTreeNodeDelimiter = "\u00a0"
 let g:NERDTreeIgnore=['\~$', '__pycache__']
 let g:autotagTagsFile=".tags"
 let g:NERDTreeWinPos = "right"
-map <C-y> :NERDTreeToggle %<CR>
 let g:NERDTreeHijackNetrw = 0
 let g:ranger_replace_netrw = 1
-
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "GutenTags
@@ -167,10 +223,9 @@ let g:gutentags_ctags_tagfile = ".tags"
 """FZF
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
-nmap <silent> <C-p> :Files<CR>
+let $FZF_DEFAULT_COMMAND= 'ag -g ""'
 
 ""Ack
-nmap ƒ :Ack ""<LEFT>
 let g:ack_autoclose = 1
 let g:ackpreview=1
 
@@ -190,10 +245,17 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 autocmd FileType python CocDisable
 
 "" closetag
-let g:closetag_regions =  {
-\ 'typescript.tsx': 'jsxRegion,tsxRegion',
-\ 'javascript.jsx': 'jsxRegion',
-\ }
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+let g:closetag_filenames = '*.html,*.jsx,*.tsx'
+
+" Disables auto-close if not in a "valid" region (based on filetype)
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'typescriptreact': 'jsxRegion,tsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
 
 ""YCM
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -202,9 +264,6 @@ autocmd FileType python nmap <silent>gr :YcmCompleter GoToReferences<CR>
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_filetype_whitelist = {'python': 1}
 set completeopt-=preview
-
-""Black
-autocmd FileType python nmap <Leader>gl :Black<CR>
 
 ""vim-better-whitespace
 let g:better_whitespace_enabled=1
@@ -218,7 +277,7 @@ function! ToggleGStatus()
     if buflisted(bufname('.git/index'))
         bd .git/index
     else
-        Gstatus
+        Git
     endif
 endfunction
 
@@ -241,14 +300,13 @@ let g:vim_isort_map = ''
 let b:ale_linters = ['pyflakes']
 let g:ale_linters = {'python': ['flake8']}
 let g:ale_fixers = {'python': ['autoimport', 'black']}
-nnoremap <leader>n :ALENext<cr>
 
 ""vim-airline
 let g:airline_theme='tomorrow'
-let g:airline_powerline_fonts = 1
-" remove the filetype part
+"let g:airline_powerline_fonts = 1
+"remove the filetype part
 let g:airline_section_x=''
-" remove the encoding type section
+"remove the encoding type section
 let g:airline_section_y = ''
 " remove separators for empty sections
 let g:airline_skip_empty_sections = 1
@@ -256,11 +314,10 @@ let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_section_c = '%t'
 
-au User AirlineAfterInit :let g:airline_section_x = airline#section#create([])
+"au User AirlineAfterInit :let g:airline_section_x = airline#section#create([])
 au User AirlineAfterInit :let g:airline_section_z = airline#section#create(["linenr", "maxlinenr"])
 
 let g:webdevicons_enable_airline_statusline_fileformat_symbols = 0
-
 
 ""vim-tbone"
 nnoremap <silent> <leader>vb :Twrite {bottom} <cr> :TmuxNavigateDown <cr>
@@ -273,6 +330,7 @@ nmap <silent> tt :TestNearest<CR>
 nmap <silent> tf :TestFile<CR>
 nmap <silent> ts :TestSuite<CR>
 nmap <silent> tl :TestLast<CR>
-" let test#strategy = "vimux"
+let test#strategy = "vimux"
+let test#python#runner = 'pytest'
 
 set t_vb=
