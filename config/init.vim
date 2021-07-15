@@ -81,6 +81,12 @@ Plug 'ianks/vim-tsx'
 " Test
 Plug 'vim-test/vim-test'
 
+" CSS
+Plug 'ap/vim-css-color'
+
+" Generic
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 
 """ Lua config
