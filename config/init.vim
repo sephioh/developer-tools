@@ -191,6 +191,12 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <silent>q :bd<CR>
 
+" resize splits
+nnoremap <silent> ∆ :resize -2 <CR>
+nnoremap <silent> ˚ :resize +2 <CR>
+nnoremap <silent> ˙ :vertical resize -2 <CR>
+nnoremap <silent> ¬ :vertical resize +2 <CR>
+
 "Disable arrow keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
