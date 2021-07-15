@@ -176,7 +176,7 @@ nnoremap <C-f> :Ag<CR>
 nmap <silent> <C-p> :Files<CR>
 
 "CTRL + A -> Search commands
-nmap <silent> <C-a> :Commands<CR>
+nmap <silent> <C-a> :Telescope commands<CR>
 
 "Space bar -> Fold/Unfold code
 nnoremap <space> za
