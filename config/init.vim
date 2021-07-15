@@ -146,6 +146,7 @@ au BufNewFile,BufRead *.html set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.css set tabstop=2 softtabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.json set tabstop=2 softtabstop=2 shiftwidth=2
 au BufRead,BufNewFile tsconfig.json set filetype=jsonc
+au BufRead,BufNewFile *.yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType typescript.tsx setlocal ts=2 sts=2 sw=2
 autocmd FileType typescriptreact setlocal ts=2 sts=2 sw=2
