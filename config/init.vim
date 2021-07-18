@@ -31,7 +31,6 @@ Plug 'preservim/nerdcommenter'
 Plug 'tmhedberg/SimpylFold'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
-Plug 'myusuf3/numbers.vim'
 
 " Syntax helpers
 Plug 'dkarter/bullets.vim'
@@ -102,6 +101,7 @@ colorscheme gruvbox
 nnoremap ; :
 
 set cursorline
+imap <C-C> <esc>
 
 "change the mapleader from \ to ,
 let mapleader=","
@@ -109,8 +109,12 @@ let mapleader=","
 "enable syntax
 syntax on
 
-"display line numbers
+"line numbers
 set number
+set relativenumber
+autocmd TermOpen * setlocal nonumber norelativenumber
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
 
 " indentation
 set autoindent
@@ -125,8 +129,6 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
-
-autocmd TermOpen * setlocal nonumber norelativenumber
 
 """search using insensitive case
 set nohlsearch
