@@ -223,6 +223,12 @@ let g:pymode_options_max_line_length = 88
 let g:pymode_options_colorcolumn = 0
 let g:pymode_lint = 0
 
+if !empty($VIRTUAL_ENV)
+  let g:ycm_server_python_interpreter = $VIRTUAL_ENV . '/bin/python'
+  let $PYTHONPATH = finddir('site-packages', $VIRTUAL_ENV . '/lib/*')
+endif
+
+
 ""NERDTree config
 let g:NERDTreeNodeDelimiter = "\u00a0"
 let g:NERDTreeIgnore=['\~$', '__pycache__']
