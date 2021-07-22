@@ -178,20 +178,20 @@ nnoremap <silent><F5> :TagbarToggle<cr>
 "F10 -> Reload Neovim
 nnoremap <silent><F10> :source $MYVIMRC <cr>
 
-"CTRL + F -> Search pattern in dir
+"CTRL + f -> Search pattern in dir
 nnoremap <C-f> :Ag<CR>
 
-"CTRL + P -> Search file by filename
+"CTRL + p -> Search file by filename
 nmap <silent> <C-p> :Files<CR>
 
-"CTRL + A -> Search commands
-nmap <silent> <C-a> :Telescope commands<CR>
+"CTRL + a -> Search commands
+nmap <silent> <C-a> :Commands<CR>
 
 "Space bar -> Fold/Unfold code
 nnoremap <space> za
 
 "CTRL + y -> NERDTree
-map <C-y> :NERDTreeToggle<CR>
+map <silent> <C-y> :NERDTreeToggle<CR>
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
