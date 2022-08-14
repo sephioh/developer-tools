@@ -1,0 +1,14 @@
+---
+# tasks file for pip-packages
+- name: Install python packages
+  ansible.builtin.pip:
+    name:
+      - autoimport
+      - black
+      - bpython
+      - isort
+      - neovim
+      - pyflakes
+      - pylint
+      - rope
+      - ropemode

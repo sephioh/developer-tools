@@ -1,0 +1,36 @@
+---
+- name: Add neovim ppa
+  become: true
+  ansible.builtin.apt_repository:
+    repo: ppa:neovim-ppa/stable
+
+- name: Add docker repo
+  block:
+  - name: Create keyrings folder
+    ansible.builtin.file:
+      path: /etc/apt/keyrings
+      state: directory
+      mode: '0755'
+
+  - name: Download docker gpg key
+    get_url:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      dest: /tmp/docker.gpg
+      mode: '0744'
+
+  - name: Add docker gpg key
+    become: true
+    shell: cat /tmp/docker.gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    args:
+      creates: /etc/apt/keyrings/docker.gpg
+
+  - name: Add docker.list source
+    become: true
+    ansible.builtin.copy:
+      src: /home/ubuntu/developer-tools/config/docker.list
+      dest: /etc/apt/sources.list.d/docker.list
+      owner: root
+      group: root
+      mode: '0644'
+
+

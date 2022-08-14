@@ -1,0 +1,9 @@
+---
+- name: Set tmux config
+  become: true
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/sephioh/developer-tools/master/config/tmux.conf
+    dest: /home/ubuntu/.tmux.conf
+    mode: '0440'
+    owner: ubuntu
+    group: ubuntu

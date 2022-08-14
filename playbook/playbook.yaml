@@ -1,0 +1,35 @@
+---
+- name: Setup local development machine
+  hosts: 127.0.0.1
+  connection: local
+  vars:
+    - homeDir: '/home/ubuntu/'
+
+  tasks:
+    - name: setup repos
+      import_role:
+        name: repos
+
+    - name: packages
+      import_role:
+        name: packages
+
+    - name: pip packages
+      import_role:
+        name: pip-packages
+
+    - name: git config
+      import_role:
+        name: git-config
+
+    - name: tmux
+      import_role:
+        name: tmux
+
+    - name: neovim
+      import_role:
+        name: neovim
+
+    - name: zsh
+      import_role:
+        name: zsh

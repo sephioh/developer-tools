@@ -1,0 +1,41 @@
+---
+# tasks file for packages
+- name: Remove unwanted packages
+  become: true
+  apt:
+    package:
+      - vim
+      - node
+    state: absent
+
+- name: Install packages
+  become: true
+  apt:
+    update_cache: yes
+    pkg:
+      - ack
+      - autojump
+      - build-essential
+      - bat
+      - ca-certificates
+      - curl
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-compose-plugin
+      - exuberant-ctags
+      - fzf
+      - git
+      - gnupg
+      - lsb-release
+      - mosh
+      - neovim
+      - npm
+      - python3-dev
+      - python3-pip
+      - python3-pudb
+      - silversearcher-ag
+      - ranger
+      - tmux
+      - zsh
+    state: present

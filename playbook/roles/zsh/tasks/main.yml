@@ -1,0 +1,30 @@
+---
+- name: Set .zshenv config
+  ansible.builtin.copy:
+    src: /home/ubuntu/developer-tools/config/zsh/zshenv
+    dest: /home/ubuntu/.zshenv
+    owner: ubuntu
+    group: ubuntu
+    mode: '0644'
+
+- name: Check for oh-my-zsh install
+  stat: path=/home/ubuntu/.oh-my-zsh
+  register: ohmyzsh
+  when: ohmyzsh.stat.isdir is defined and ohmyzsh.stat.isdir
+
+- name: Download zsh installer
+  when: ohmyzsh.changed == True
+  get_url:
+    url: https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+    dest: /tmp/zsh-installer.sh
+    mode: '0744'
+
+- name: Execute the zsh-installer.sh
+  when: ohmyzsh.changed == True
+  shell: /tmp/oh-my-zsh-installer.sh
+
+- name: Remove the zsh-installer.sh
+  when: ohmyzsh.changed == True
+  file:
+    path: /tmp/oh-my-zsh-installer.sh
+    state: absent
