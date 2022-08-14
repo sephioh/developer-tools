@@ -96,6 +96,7 @@ autocmd User TelescopePreviewerLoaded setlocal wrap
 
 """"""""" General configuration """"""""""""
 "colorscheme minimalist
+set path+=**
 set encoding=utf-8
 colorscheme gruvbox
 nnoremap ; :
@@ -291,7 +292,7 @@ let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
 ""ropevim
-source ~/.config/nvim/plugged/ropevim/ftplugin/python_ropevim.vim
+source ~/.local/share/nvim/plugged/ropevim/ftplugin/python_ropevim.vim
 
 ""vim-fugitive
 function! ToggleGStatus()
