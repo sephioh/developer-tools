@@ -17,8 +17,16 @@
       scope: global
       value: ~/.gitignore
 
+- name: copy default .gitignore
+  ansible.builtin.copy:
+    src: /home/ubuntu/developer-tools/config/.gitignore_global
+    dest: /home/ubuntu/.gitignore
+    owner: ubuntu
+    group: ubuntu
+    mode: '0744'
+
 - name: default branch
   community.general.git_config:
       name: init.defaultBranch
       scope: global
-      value: ~/.gitignore
+      value: master
