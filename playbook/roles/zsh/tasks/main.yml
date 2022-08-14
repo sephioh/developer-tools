@@ -7,6 +7,9 @@
     group: ubuntu
     mode: '0644'
 
+- name: copy zsh config files
+  copy: src=/home/ubuntu/developer-tools/config/zsh/config.d/ dest=/home/ubuntu/.config/zsh/config.d/
+
 - name: Check for oh-my-zsh install
   stat: path=/home/ubuntu/.oh-my-zsh
   register: ohmyzsh
